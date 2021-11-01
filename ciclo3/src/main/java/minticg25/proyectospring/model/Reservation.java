@@ -48,7 +48,7 @@ public class Reservation{
 
     @ManyToOne
     @JoinColumn(name = "client", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","reservation"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "reservation")

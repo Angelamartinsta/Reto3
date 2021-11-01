@@ -87,20 +87,20 @@ public void setAge(Integer age) {
     this.age = age;
 }
 
-public List<Message> getMessage() {
+public List<Message> getMessages() {
     return messages;
 }
 
-public void setMessage(List<Message> message) {
-    this.messages = message;
+public void setMessages(List<Message> messages) {
+    this.messages = messages;
 }
 
-public List<Reservation> getReservation() {
+public List<Reservation> getReservations() {
     return reservations;
 }
 
-public void setReservation(List<Reservation> reservation) {
-    this.reservations = reservation;
+public void setReservations(List<Reservation> reservations) {
+    this.reservations = reservations;
 }
 
 }
