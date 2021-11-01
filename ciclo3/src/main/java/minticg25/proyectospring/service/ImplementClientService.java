@@ -33,12 +33,12 @@ public class ImplementClientService implements ClientService  {
     @Override
     public Client guardarClientId(Client c) {
       
-        if (c.getIdCient()==null){
+        if (c.getIdClient()==null){
 
             return clientCrudRepository.save(c);
         }
         else{
-            Optional<Client> cos=clientCrudRepository.findById(c.getIdCient());
+            Optional<Client> cos=clientCrudRepository.findById(c.getIdClient());
             if(!cos.isPresent()){
                 return clientCrudRepository.save(c);
             }

@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -50,7 +49,6 @@ public class Costume{
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "costume")
     /*@JsonIgnoreProperties({"costume","client"})*/
-    @JsonIgnore
     private List<Reservation> reservation;
 
 

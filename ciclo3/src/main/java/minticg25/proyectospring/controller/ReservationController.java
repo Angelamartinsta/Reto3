@@ -39,7 +39,7 @@ public class ReservationController {
     @PostMapping("/Reservation/save")  
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation crearReservation(@RequestBody Reservation reservation){
-        reservation.setStatus("Creado");
+        reservation.setStatus("created");
         Date dateReservation= new Date();
         reservation.setDateCreate(dateReservation);
         return reservationService.guardarReservationId(reservation);

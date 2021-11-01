@@ -40,12 +40,12 @@ public class Reservation{
 
     @ManyToOne
     @JoinColumn(name = "costume", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","reservation"})
+    @JsonIgnoreProperties({"score","reservation"})
     private Costume costume;
 
     @ManyToOne
     @JoinColumn(name = "client", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","reservation"})
+    @JsonIgnoreProperties({"score","client", "message","reservation"})
     private Client client;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "reservation")

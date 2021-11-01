@@ -30,7 +30,7 @@ public class Message{
 
     @ManyToOne
     @JoinColumn(name = "costume", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","category","reservation"})
+    @JsonIgnoreProperties({"message","reservation"})
     private Costume costume;
     
     //getters and setters

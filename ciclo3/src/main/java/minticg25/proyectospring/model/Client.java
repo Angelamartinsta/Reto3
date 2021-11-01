@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class Client{
      
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer idCient;
+private Integer idClient;
 
 @Column(length = 45)
 private String email;
@@ -37,21 +36,19 @@ private Integer age;
 
 
 @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
-@JsonIgnore
 private List<Message> message;
 
 @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
-@JsonIgnore
 private List<Reservation> reservation;
 
 //Getters y Setters
 
-public Integer getIdCient() {
-    return idCient;
+public Integer getIdClient() {
+    return idClient;
 }
 
-public void setIdCient(Integer idCient) {
-    this.idCient = idCient;
+public void setIdClient(Integer idClient) {
+    this.idClient = idClient;
 }
 
 public String getEmail() {
