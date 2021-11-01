@@ -39,7 +39,7 @@ public class ImplementCategoryService implements CategoryService  {
         }
         else{
             Optional<Category> cos=categoryCrudRepository.findById(c.getId());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return categoryCrudRepository.save(c);
             }
             else{
