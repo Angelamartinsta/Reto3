@@ -38,7 +38,7 @@ public class ImplementMessageService implements MessageService  {
         }
         else{
             Optional<Message> cos=messageCrudRepository.findById(c.getIdMessage());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return messageCrudRepository.save(c);
             }
             else{

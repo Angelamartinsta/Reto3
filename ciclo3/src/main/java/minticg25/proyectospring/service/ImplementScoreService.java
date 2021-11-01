@@ -39,7 +39,7 @@ public class ImplementScoreService implements ScoreService  {
         }
         else{
             Optional<Score> cos=scoreCrudRepository.findById(c.getIdScore());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return scoreCrudRepository.save(c);
             }
             else{

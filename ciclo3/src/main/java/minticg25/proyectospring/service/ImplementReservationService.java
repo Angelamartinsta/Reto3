@@ -39,7 +39,7 @@ public class ImplementReservationService implements ReservationService  {
         }
         else{
             Optional<Reservation> cos=reservationCrudRepository.findById(c.getIdReservation());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return reservationCrudRepository.save(c);
             }
             else{

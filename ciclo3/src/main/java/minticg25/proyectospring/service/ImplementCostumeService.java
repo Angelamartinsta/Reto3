@@ -40,7 +40,7 @@ public class ImplementCostumeService implements CostumeService {
         }
         else{
             Optional<Costume> cos=costumeCrudRepository.findById(c.getId());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return costumeCrudRepository.save(c);
             }
             else{

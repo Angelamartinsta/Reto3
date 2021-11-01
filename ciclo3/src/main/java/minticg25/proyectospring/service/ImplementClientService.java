@@ -39,7 +39,7 @@ public class ImplementClientService implements ClientService  {
         }
         else{
             Optional<Client> cos=clientCrudRepository.findById(c.getIdCient());
-            if(cos.isEmpty()){
+            if(!cos.isPresent()){
                 return clientCrudRepository.save(c);
             }
             else{
