@@ -11,7 +11,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
+
 
 
 @Entity
@@ -36,10 +38,12 @@ private Integer age;
 
 
 @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
-private List<Message> message;
+@JsonIgnoreProperties("client")
+private List<Message> messages;
 
 @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
-private List<Reservation> reservation;
+@JsonIgnoreProperties("client")
+private List<Reservation> reservations;
 
 //Getters y Setters
 
@@ -84,19 +88,19 @@ public void setAge(Integer age) {
 }
 
 public List<Message> getMessage() {
-    return message;
+    return messages;
 }
 
 public void setMessage(List<Message> message) {
-    this.message = message;
+    this.messages = message;
 }
 
 public List<Reservation> getReservation() {
-    return reservation;
+    return reservations;
 }
 
 public void setReservation(List<Reservation> reservation) {
-    this.reservation = reservation;
+    this.reservations = reservation;
 }
 
 }

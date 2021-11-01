@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -34,18 +35,20 @@ public class Reservation{
 
     @CreatedDate
    //  @Temporal(TemporalType.DATE)
+    @JsonIgnore
     private Date dateCreate;
+    
 
 
 
     @ManyToOne
     @JoinColumn(name = "costume", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"score","reservation"})
+    @JsonIgnoreProperties({"reservations"})
     private Costume costume;
 
     @ManyToOne
     @JoinColumn(name = "client", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"score","client", "message","reservation"})
+    @JsonIgnoreProperties({"message","reservation"})
     private Client client;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "reservation")

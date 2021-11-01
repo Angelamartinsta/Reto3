@@ -24,14 +24,16 @@ public class Message{
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "client", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","reservation"})
-    private Client client;
+    @JoinColumn(name = "costume", nullable = false, updatable = false)
+    @JsonIgnoreProperties({"messages","reservations","client"})
+    private Costume costume;
 
     @ManyToOne
-    @JoinColumn(name = "costume", nullable = false, updatable = false)
-    @JsonIgnoreProperties({"message","reservation"})
-    private Costume costume;
+    @JoinColumn(name = "client", nullable = false, updatable = false)
+    @JsonIgnoreProperties({"message","reservation","client"})
+    private Client client;
+
+
     
     //getters and setters
     public Integer getIdMessage() {
