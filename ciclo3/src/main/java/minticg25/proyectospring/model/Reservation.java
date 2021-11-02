@@ -50,9 +50,10 @@ public class Reservation{
     @JoinColumn(name = "client", nullable = false, updatable = false)
     @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
+    private Integer score;
 
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "reservation")
-    private List<Score> score;
+   /* @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "reservation")
+    private List<Score> score;*/
 
 
     //Getters and Setters
@@ -111,12 +112,14 @@ public class Reservation{
     public void setClient(Client client) {
         this.client = client;
     }
-    public List<Score> getScore() {
+     public Integer getScore() {
         return score;
     }
 
-    public void setScore(List<Score> score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
+    
+    
 
 }
