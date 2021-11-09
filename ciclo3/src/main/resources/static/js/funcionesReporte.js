@@ -1,5 +1,7 @@
 // Se envía solo un parámetro que es un diccionario, lee el servicio y carga los datos al diccionario json
 //DEBO CAMBIAR LA URL Y LA ESTRUCTURA DEL DICCIONARIO JSON
+/*var servidor="http://localhost:8080"*/
+var servidor="http://144.22.59.130"
 
 function limpiar(){
 
@@ -11,7 +13,7 @@ function pintarRespuesta(respuesta){
 
     $("#idDivConsulta").empty();
     $("#idDivConsulta").append("<caption>Tabla Reporte Canceladas y Creadas</caption>");
-    $("#idDivConsulta").append("<tr><th>Cant. Completadas</th><th>Cant. Canceladas</th></tr>");
+    $("#idDivConsulta").append("<tr><th>Completadas</th><th>Canceladas</th></tr>");
     $("#idDivConsulta").append("<tr>");
     $("#idDivConsulta").append("<td>" + respuesta.completed + "</td>");
     $("#idDivConsulta").append("<td>" + respuesta.cancelled + "</td>"); 
@@ -51,7 +53,7 @@ function pintarRespuestaClientes(respuesta){
 function reporteStatus(){
     console.log("test");
     $.ajax({
-        url:"http://132.226.163.1:8080/api/Reservation/report-status",
+        url: servidor+"/api/report-status",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -69,7 +71,7 @@ function reporteFecha(){
     console.log(fechaCierre);
     
         $.ajax({
-            url:"http://132.226.163.1:8080/api/Reservation/report-dates/"+fechaInicio+"/"+fechaCierre,
+            url:servidor+"/api/report-dates/"+fechaInicio+"/"+fechaCierre,
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){
@@ -81,7 +83,7 @@ function reporteFecha(){
 
     function reporteCliente(){
         $.ajax({
-            url:"http://132.226.163.1:8080/api/Reservation/report-clients",
+            url:servidor+"/api/report-clients",
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){

@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 import minticg25.proyectospring.model.Reservation;
 import minticg25.proyectospring.model.reports.CountClient;
 import minticg25.proyectospring.model.reports.ReservationStatus;
-import minticg25.proyectospring.repository.ReservationCrudRepository;
+import minticg25.proyectospring.repository.ReservationRepository;
 
 @Service
 public class ImplementReservationService implements ReservationService {
 
     @Autowired
-    ReservationCrudRepository reservationCrudRepository;
+    ReservationRepository reservationCrudRepository;
 
     @Override
     public List<Reservation> listarReservation() {

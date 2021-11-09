@@ -11,13 +11,9 @@ import minticg25.proyectospring.model.Reservation;
 import minticg25.proyectospring.model.reports.CountClient;
 
 @Repository
-public interface ReservationCrudRepository extends CrudRepository<Reservation,Integer> {
+public interface  ReservationCrudRepository extends CrudRepository<Reservation,Integer> {
     public List<Reservation> findAllByStatus(String status);
     public List<Reservation> findAllByStartDateAfterAndStartDateBefore(Date dateOne,Date dateTwo);
     @Query("SELECT c.client, COUNT(c.client) FROM Reservation AS c group by c.client order by COUNT(c.client)DESC")
     public List<Object[]> countTotalReservationByClient();
-    public List<Reservation> getReservationPeriod(Date startDate, Date endDate);
-    public List<CountClient> getTopClient();
-    public List<Reservation> getReservationByStatus(String string);
-
 }
