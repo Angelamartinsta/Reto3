@@ -47,7 +47,7 @@ public class ClientController {
            return clientService.borrarClientId(id);
     }
     @PutMapping("/Client/update")  
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     public Client actualizarClient(@RequestBody Client client){
         return clientService.actualizarClient(client);
     }

@@ -48,7 +48,7 @@ public class CostumeController {
     }
 
     @PutMapping("/Costume/update")  
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     public Costume actualizarCostume(@RequestBody Costume costume){
         return costumeService.actualizarCostume(costume);
     }

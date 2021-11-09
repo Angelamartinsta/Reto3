@@ -47,7 +47,7 @@ public class ScoreController {
            return scoreService.borrarScoreId(id);
     }
     @PutMapping("/Score/update")  
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     public Score actualizarScore(@RequestBody Score score){
         return scoreService.actualizarScore(score);
     }
