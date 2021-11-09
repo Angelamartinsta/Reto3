@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../js/funcionesMensaje.js"></script>
     <link rel="stylesheet" href="../estilos/Consulta.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../js/funcionesMensaje.js"></script>
 </head>
 
 <body>
@@ -24,32 +24,29 @@
     <div class="btn-group">
         <button onclick="obtenerItems()" class="button">Listar</button>
         <button onclick="insertar()" class="button">Insertar</button>
-        <button onclick="actualizar()" class="button">Actualizar</button>
     </div>
 
     <div class="btn-group">
         <table class="grilla" ; style="border: hidden">
+
             <tr>
-                <td class="td1">Id</td>
-                <td class="td2">
-                    <input type="number" id="idCodigo" placeholder="Código" class="buttonText">
-                    </input>
+                <td class="td1">Client</td>
+                <td class="td2"><select id="idClient" placeholder="Client" class="buttonText">
                 </td>
             </tr>
             <tr>
-                <td class="td1">Name</td>
-                <td class="td2"><input type="text" id="idName" placeholder="Name" class="buttonText">
+                <td class="td1">Disfraz</td>
+                <td class="td2"><select id="idDisfraz" placeholder="Disfraz" class="buttonText">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td1">Message</td>
+                <td class="td2"><input type="text" id="idMessage" placeholder="Message" class="buttonText">
                     </input>
                 </td>
-                <td class="td1">Description</td>
-                <td class="td2">
-                    <input type="text" id="idDescription" placeholder="Description" class="buttonText">
-                    </input>
-                </td>
-
-
+            </tr>
         </table>
-
     </div>
     <div class="btn-group">
 

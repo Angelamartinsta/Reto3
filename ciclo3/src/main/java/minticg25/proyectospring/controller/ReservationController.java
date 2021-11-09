@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
 import minticg25.proyectospring.model.Reservation;
+import minticg25.proyectospring.model.reports.CountClient;
+import minticg25.proyectospring.model.reports.ReservationStatus;
 import minticg25.proyectospring.service.ReservationService;
 
 //OPERACIONES CRUD  - LISTAR
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT,
+        RequestMethod.DELETE })
 
 public class ReservationController {
 
@@ -27,34 +29,49 @@ public class ReservationController {
     ReservationService reservationService;
 
     @GetMapping("/Reservation/all")
-    public List<Reservation> obtenerReservation(){
+    public List<Reservation> obtenerReservation() {
         return reservationService.listarReservation();
     }
 
     @GetMapping("/Reservation/{id}")
-    public Optional<Reservation> obtenerReservationId(@PathVariable("id") Integer id ){
+    public Optional<Reservation> obtenerReservationId(@PathVariable("id") Integer id) {
         return reservationService.listarReservationId(id);
     }
 
-    @PostMapping("/Reservation/save")  
+    @PostMapping("/Reservation/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Reservation crearReservation(@RequestBody Reservation reservation){
+    public Reservation crearReservation(@RequestBody Reservation reservation) {
         reservation.setStatus("created");
-        Date dateReservation= new Date();
+        Date dateReservation = new Date();
         reservation.setDateCreate(dateReservation);
         return reservationService.guardarReservationId(reservation);
     }
-    
+
     @DeleteMapping("Reservation/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean borrarReservation(@PathVariable("id") Integer id){
-           return reservationService.borrarReservationId(id);
+    public boolean borrarReservation(@PathVariable("id") Integer id) {
+        return reservationService.borrarReservationId(id);
     }
 
-    @PutMapping("/Reservation/update")  
+    @PutMapping("/Reservation/update")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Reservation actualizarReservation(@RequestBody Reservation reservation){
+    public Reservation actualizarReservation(@RequestBody Reservation reservation) {
         return reservationService.actualizarReservation(reservation);
     }
-}  
 
+    @GetMapping("/report-status")
+    public ReservationStatus getReservationsStatusReport() {
+        return reservationService.getReservationStatusReport();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservtionReportDates(@PathVariable("dateOne") String dateOne,
+            @PathVariable("dateTwo") String dateTwo) {
+        return reservationService.getReservationPeriodo(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<CountClient> getClients() {
+        return reservationService.getTopClients();
+    }
+}
