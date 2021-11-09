@@ -61,7 +61,26 @@ public class ImplementMessageService implements MessageService  {
         return bandera; 
            
     }
-    
-  
+
+    @Override
+    public Message actualizarMessage(Message c) {
+      
+        if (c.getIdMessage()==null){
+
+            return null;
+        }
+        else{
+            Optional<Message> cos=messageCrudRepository.findById(c.getIdMessage());
+            if(cos.isPresent()){
+                return messageCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
+    }
 
 }
+
+  

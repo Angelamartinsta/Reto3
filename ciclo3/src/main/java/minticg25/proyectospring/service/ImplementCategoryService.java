@@ -63,4 +63,23 @@ public class ImplementCategoryService implements CategoryService  {
            
     }
 
+    @Override
+    public Category actualizarCategory(Category c) {
+      
+        if (c.getId()==null){
+
+            return null;
+        }
+        else{
+            Optional<Category> cos=categoryCrudRepository.findById(c.getId());
+            if(cos.isPresent()){
+                return categoryCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
+    }
+
 }

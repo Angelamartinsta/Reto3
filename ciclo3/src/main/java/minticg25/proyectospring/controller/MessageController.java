@@ -41,9 +41,15 @@ public class MessageController {
         return messageService.guardarMessageId(message);
     }
     
-    @DeleteMapping("Message/delete/{id}")
+    @DeleteMapping("Message/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarMessage(@PathVariable("id") Integer id){
            return messageService.borrarMessageId(id);
     }
-}
+
+    @PutMapping("/Message/update")  
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Message actualizarMessage(@RequestBody Message message){
+        return messageService.actualizarMessage(message);
+    }
+}    

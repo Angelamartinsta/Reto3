@@ -11,5 +11,5 @@ public interface MessageService{
     public Optional<Message> listarMessageId(Integer Id);
     public Message guardarMessageId(Message c);
     public boolean borrarMessageId(Integer id);
-    
+    public Message actualizarMessage(Message c);
 }

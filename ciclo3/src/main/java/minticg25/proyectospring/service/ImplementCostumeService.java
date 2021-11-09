@@ -64,4 +64,26 @@ public class ImplementCostumeService implements CostumeService {
            
     }
 
+    @Override
+    public Costume actualizarCostume(Costume c) {
+      
+        if (c.getId()==null){
+
+            return null;
+        }
+        else{
+            Optional<Costume> cos=costumeCrudRepository.findById(c.getId());
+            if(cos.isPresent()){
+                return costumeCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
+    }
+
 }
+
+
+

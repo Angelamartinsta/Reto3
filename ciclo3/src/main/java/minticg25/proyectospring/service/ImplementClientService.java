@@ -60,7 +60,25 @@ public class ImplementClientService implements ClientService  {
             bandera=false;
         }
         return bandera; 
-           
+    }
+
+    @Override
+    public Client actualizarClient(Client c) {
+      
+        if (c.getIdClient()==null){
+
+            return null;
+        }
+        else{
+            Optional<Client> cos=clientCrudRepository.findById(c.getIdClient());
+            if(cos.isPresent()){
+                return clientCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
     }
 
 }

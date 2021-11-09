@@ -11,5 +11,5 @@ public interface ScoreService{
     public Optional<Score> listarScoreId(Integer Id);
     public Score guardarScoreId(Score c);
     public boolean borrarScoreId(Integer id);
-    
+    public Score actualizarScore (Score c);
 }

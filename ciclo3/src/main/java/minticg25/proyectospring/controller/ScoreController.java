@@ -41,9 +41,16 @@ public class ScoreController {
         return scoreService.guardarScoreId(score);
     }
     
-    @DeleteMapping("Score/delete/{id}")
+    @DeleteMapping("Score/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarScore(@PathVariable("id") Integer id){
            return scoreService.borrarScoreId(id);
     }
-}
+    @PutMapping("/Score/update")  
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Score actualizarScore(@RequestBody Score score){
+        return scoreService.actualizarScore(score);
+    }
+}  
+
+

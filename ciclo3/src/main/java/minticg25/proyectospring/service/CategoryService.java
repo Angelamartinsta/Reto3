@@ -11,5 +11,6 @@ public interface CategoryService{
     public Optional<Category> listarCategoryId(Integer Id);
     public Category guardarCategoryId(Category c);
     public boolean borrarCategoryId(Integer id);
+    public Category actualizarCategory(Category c);
     
 }

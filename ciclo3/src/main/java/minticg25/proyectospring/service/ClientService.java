@@ -11,5 +11,5 @@ public interface ClientService{
     public Optional<Client> listarClientId(Integer Id);
     public Client guardarClientId(Client c);
     public boolean borrarClientId(Integer id);
-    
+    public Client actualizarClient(Client c);
 }

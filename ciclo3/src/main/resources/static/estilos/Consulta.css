@@ -1,0 +1,157 @@
+body{
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: #363256 rgba(94,110,220,0.50);
+  background-repeat: repeat;
+  overflow: hidden;
+  font-family: 'Merienda One', cursive;
+}
+header{
+  border: #978b7d 3px solid;
+  box-shadow: 0 0 15px 0 #978b7d;
+  border-radius: 10px;
+  margin: 1%;
+}
+.titulo{
+  font-family: 'Merienda One', cursive;
+  font-size: 30px;
+  text-align: right;
+  position: absolute;
+  top:1%;
+  left: 12%;
+  color:#0B4C5F;  
+  color:white;
+  font-size: 40px;
+  -webkit-text-stroke: 2px black;
+}
+h2{
+  text-align: center;
+  color:white;
+  font-size: 30px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px black;
+}
+
+.volver{
+  float: right;
+  position: right;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
+  
+  
+}
+.botonvolver{
+  border: 5px double #1F4373;
+  border-radius: 10px;
+  background-color: #7EB3BF;
+  color: #F2BA52;
+  text-decoration:none;
+  font-family: 'Merienda One', cursive;
+  font-size: 20px;
+  width: 40px;
+  padding:15%;
+  
+}
+.botonvolver:hover{
+  background-color: #1F3B73;
+}
+.btn-group{
+  border: #978b7d 3px solid;
+  box-shadow: 0 0 15px 0 #978b7d;
+  border-radius: 10px;
+  margin: 0.5%;
+  padding: 0.5%;
+}
+
+
+.btn-group .button {
+  background-color: #5f8088;
+  border: 5px double #1F4373;
+  color: #F2BA52;
+  padding: 5px 5px;
+  font-family: 'Merienda One', cursive;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  width: 10%;  
+}
+  .btn-group .button:hover {
+    background-color: #1F3B73; 
+  }
+
+  .btn-group .buttonText {
+    background-color: #ffffff;
+    border: 1px 1px solid;
+    color: rgb(0, 0, 0);
+    padding: 3px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 1px;
+    cursor: pointer;
+    font-family: 'Merienda One', cursive;
+  }
+p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+#idDivConsulta{
+    font-family: 'Merienda One', cursive;
+    background-color: #F2BA52;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border: 5px double #1F4373;
+}
+.grilla{
+    width:auto;    
+    display: inline-block;
+    
+}
+.grilla ,th {
+    text-align: center;
+  }
+.grilla, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    color: black;
+    margin:auto;
+    padding: 3px;
+    border: hidden;
+    font-family: 'Merienda One', cursive;
+ } 
+table, tr:nth-child(even) {
+    background-color: #ffffff00;
+    padding: 5px;
+  } 
+.grilla .td1{
+    width: 10%;
+    text-align: center; 
+    color: #F2BA52; 
+    font-size: 20px; 
+    font-weight: bold;
+ }
+ .grilla .td2{
+    width: 30%;
+ } 
+ div{
+    text-align: center;
+ }
+ .botonborrar{
+  color: red;
+  content:url("../img/delete.png");
+  width:"50px";
+ }
+ table{
+    width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 

@@ -45,9 +45,16 @@ public class ReservationController {
         return reservationService.guardarReservationId(reservation);
     }
     
-    @DeleteMapping("Reservation/delete/{id}")
+    @DeleteMapping("Reservation/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarReservation(@PathVariable("id") Integer id){
            return reservationService.borrarReservationId(id);
     }
-}
+
+    @PutMapping("/Reservation/update")  
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Reservation actualizarReservation(@RequestBody Reservation reservation){
+        return reservationService.actualizarReservation(reservation);
+    }
+}  
+

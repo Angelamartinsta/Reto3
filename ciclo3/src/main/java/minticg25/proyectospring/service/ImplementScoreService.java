@@ -62,5 +62,24 @@ public class ImplementScoreService implements ScoreService  {
         return bandera; 
            
     }
+    @Override
+    public Score actualizarScore(Score c) {
+      
+        if (c.getIdScore()==null){
+
+            return null;
+        }
+        else{
+            Optional<Score> cos=scoreCrudRepository.findById(c.getIdScore());
+            if(cos.isPresent()){
+                return scoreCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
+    }
 
 }
+

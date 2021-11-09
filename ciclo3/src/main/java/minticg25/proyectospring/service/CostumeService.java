@@ -11,5 +11,6 @@ public interface CostumeService{
     public Optional<Costume> listarCostummeId(Integer Id);
     public Costume guardarCostummeId(Costume c);
     public boolean borrarCostumeId(Integer id);
+    public Costume actualizarCostume(Costume c);
      
 }

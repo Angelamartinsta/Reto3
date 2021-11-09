@@ -41,9 +41,15 @@ public class CostumeController {
         return costumeService.guardarCostummeId(costume);
     }
     
-    @DeleteMapping("/Costume/delete/{id}")
+    @DeleteMapping("/Costume/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarCostume(@PathVariable("id") Integer id){
            return costumeService.borrarCostumeId(id);
+    }
+
+    @PutMapping("/Costume/update")  
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Costume actualizarCostume(@RequestBody Costume costume){
+        return costumeService.actualizarCostume(costume);
     }
 }

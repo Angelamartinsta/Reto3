@@ -41,9 +41,15 @@ public class CategoryController {
         return categoryService.guardarCategoryId(category);
     }
     
-    @DeleteMapping("Category/delete/{id}")
+    @DeleteMapping("Category/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarCategory(@PathVariable("id") Integer id){
            return categoryService.borrarCategoryId(id);
+    }
+
+    @PutMapping("Category/update")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Category actualizarCategory(@RequestBody Category category){
+           return categoryService.actualizarCategory(category);
     }
 }

@@ -63,4 +63,24 @@ public class ImplementReservationService implements ReservationService  {
            
     }
 
+
+    @Override
+    public Reservation actualizarReservation(Reservation c) {
+      
+        if (c.getIdReservation()==null){
+
+            return null;
+        }
+        else{
+            Optional<Reservation> cos=reservationCrudRepository.findById(c.getIdReservation());
+            if(cos.isPresent()){
+                return reservationCrudRepository.save(c);
+            }
+            else{
+                return null;
+            }
+        }
+        
+    }
+
 }

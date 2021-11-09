@@ -41,9 +41,15 @@ public class ClientController {
         return clientService.guardarClientId(client);
     }
     
-    @DeleteMapping("Client/delete/{id}")
+    @DeleteMapping("Client/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean borrarClient(@PathVariable("id") Integer id){
            return clientService.borrarClientId(id);
     }
+    @PutMapping("/Client/update")  
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Client actualizarClient(@RequestBody Client client){
+        return clientService.actualizarClient(client);
+    }
+ 
 }
