@@ -1,7 +1,7 @@
 // Se envía solo un parámetro que es un diccionario, lee el servicio y carga los datos al diccionario json
 //DEBO CAMBIAR LA URL Y LA ESTRUCTURA DEL DICCIONARIO JSON
 /*var servidor="http://localhost:8080"*/
-var servidor="http://144.22.59.130"
+var servidor="http://144.22.59.130:8080"
 
 function limpiar(){
     document.getElementById("idCodigo").value = "";
