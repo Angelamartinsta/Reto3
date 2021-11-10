@@ -53,7 +53,7 @@ function pintarRespuestaClientes(respuesta){
 function reporteStatus(){
     console.log("test");
     $.ajax({
-        url: servidor+"/api/report-status",
+        url: servidor+"/api/Reservation/report-status",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -71,7 +71,7 @@ function reporteFecha(){
     console.log(fechaCierre);
     
         $.ajax({
-            url:servidor+"/api/report-dates/"+fechaInicio+"/"+fechaCierre,
+            url:servidor+"/api/Reservation/report-dates/"+fechaInicio+"/"+fechaCierre,
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){
@@ -83,7 +83,7 @@ function reporteFecha(){
 
     function reporteCliente(){
         $.ajax({
-            url:servidor+"/api/report-clients",
+            url:servidor+"/api/Reservation/report-clients",
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){

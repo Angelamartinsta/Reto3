@@ -41,7 +41,9 @@ public class  ReservationController {
     @PostMapping("/Reservation/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation crearReservation(@RequestBody Reservation reservation) {
-        reservation.setStatus("created");
+        if (reservation.getStatus()==null){
+            reservation.setStatus("created");
+        }
         Date dateReservation = new Date();
         reservation.setDateCreate(dateReservation);
         return reservationService.guardarReservationId(reservation);
@@ -59,18 +61,18 @@ public class  ReservationController {
         return reservationService.actualizarReservation(reservation);
     }
 
-    @GetMapping("/report-status")
+    @GetMapping("/Reservation/report-status")
     public ReservationStatus getReservationsStatusReport() {
         return reservationService.getReservationStatusReport();
     }
 
-    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    @GetMapping("/Reservation/report-dates/{dateOne}/{dateTwo}")
     public List<Reservation> getReservtionReportDates(@PathVariable("dateOne") String dateOne,
             @PathVariable("dateTwo") String dateTwo) {
         return reservationService.getReservationPeriodo(dateOne, dateTwo);
     }
 
-    @GetMapping("/report-clients")
+    @GetMapping("/Reservation/report-clients")
     public List<CountClient> getClients() {
         return reservationService.getTopClients();
     }
