@@ -39,7 +39,7 @@ public class Costume{
 
 
     @ManyToOne
-    @JoinColumn(name = "category", nullable = false, updatable = true)
+    @JoinColumn(name = "category",nullable = false, updatable = true)
     @JsonIgnoreProperties({"costumes"})
     private Category category;
 

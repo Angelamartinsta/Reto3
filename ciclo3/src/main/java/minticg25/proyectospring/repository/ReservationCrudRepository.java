@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import minticg25.proyectospring.model.Reservation;
-import minticg25.proyectospring.model.reports.CountClient;
+
 
 @Repository
 public interface  ReservationCrudRepository extends CrudRepository<Reservation,Integer> {

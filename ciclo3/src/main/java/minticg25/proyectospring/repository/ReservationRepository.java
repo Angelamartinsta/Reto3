@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 import minticg25.proyectospring.model.Client;
 import minticg25.proyectospring.model.Reservation;
 import minticg25.proyectospring.model.reports.CountClient;
-import minticg25.proyectospring.repository.ReservationCrudRepository;
 
 import java.util.ArrayList;
 import java.util.Date;

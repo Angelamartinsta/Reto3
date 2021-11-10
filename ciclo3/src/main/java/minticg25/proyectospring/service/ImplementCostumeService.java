@@ -74,6 +74,10 @@ public class ImplementCostumeService implements CostumeService {
         else{
             Optional<Costume> cos=costumeCrudRepository.findById(c.getId());
             if(cos.isPresent()){
+                if(c.getCategory()==null){
+                    c.setCategory(cos.get().getCategory());
+                }
+
                 return costumeCrudRepository.save(c);
             }
             else{
